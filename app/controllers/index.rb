@@ -3,7 +3,7 @@ require 'uri'
 require 'json'
 
 post '/' do
-  return 401 unless request["token"] == ENV["SLACK_TOKEN"]
+  # return 401 unless request["token"] == ENV["SLACK_TOKEN"]
   q = request["text"]
 
   # text_input = "This is our response"
