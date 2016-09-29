@@ -2,11 +2,11 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-# post '/' do
+post '/' do
   # return 401 unless request["token"] == ENV["SLACK_TOKEN"]
   q = request["text"]
-
   text_input = "This is our response"
+  return 200 if q == text_input
   uri = URI.parse("https://hooks.slack.com/services/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")
   app_response = Net::HTTP::Post.new(uri)
   app_response.content_type = "application/json"
@@ -17,7 +17,7 @@ require 'json'
   # response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") do |http|
   #   http.request(app_response)
   # end
-# end
+end
 
 # p response.code
 # p response.body
