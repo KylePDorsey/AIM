@@ -15,7 +15,6 @@ gem 'rake'
 gem 'shotgun', '~>0.9.1'
 gem 'faker'
 gem 'json'
-gem 'net/http'
 
 group :test do
   gem 'shoulda-matchers'
