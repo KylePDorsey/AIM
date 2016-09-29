@@ -14,6 +14,7 @@ post '/' do
     app_response.body = JSON.dump({
       "text" => text_input
     })
+  end
 
   # response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") do |http|
   #   http.request(app_response)
