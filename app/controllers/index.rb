@@ -2,7 +2,7 @@ require 'net/http'
 require 'uri'
 require 'json'
 
-post '/' do
+# post '/' do
   # return 401 unless request["token"] == ENV["SLACK_TOKEN"]
   q = request["text"]
 
@@ -17,7 +17,7 @@ post '/' do
   # response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") do |http|
   #   http.request(app_response)
   # end
-end
+# end
 
 # p response.code
 # p response.body
