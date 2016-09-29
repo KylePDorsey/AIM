@@ -9,7 +9,7 @@ post '/' do
   request = Net::HTTP::Post.new(uri)
   request.content_type = "application/json"
   request.body = JSON.dump({
-    "text" => request.body
+    "text" => request.text
   })
 
   response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") do |http|
