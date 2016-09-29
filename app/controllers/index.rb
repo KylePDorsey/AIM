@@ -3,7 +3,7 @@ require 'uri'
 require 'json'
 
 post '/' do
-  # p request.body
+  p request.body
   # text_input = "This is our response"
   # uri = URI.parse("https://hooks.slack.com/services/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")
   # request = Net::HTTP::Post.new(uri)
