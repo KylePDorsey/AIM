@@ -14,9 +14,9 @@ post '/' do
     "text" => q
   })
 
-  # response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") do |http|
-  #   http.request(request)
-  # end
+  resp = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") do |http|
+    http.response(response)
+  end
 end
 
 # p response.code
