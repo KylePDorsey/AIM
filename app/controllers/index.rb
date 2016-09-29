@@ -6,8 +6,8 @@ post '/' do
   # return 401 unless request["token"] == ENV["SLACK_TOKEN"]
   q = request["text"]
   return 200 if request["user_name"] == "outgoing-webhook"
-  text_input = "Go fuck yourself #{request["user_name"]}"
-  if q == "Fuck you"
+  text_input = "You don't need to worry about that."
+  if q == "Can you explain this?"
     uri = URI.parse("https://hooks.slack.com/services/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")
     app_response = Net::HTTP::Post.new(uri)
     app_response.content_type = "application/json"
