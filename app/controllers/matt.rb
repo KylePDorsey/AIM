@@ -11,13 +11,13 @@ post '/matt' do
   # it won't listen to itself
   return 200 if username == "matt-baker"
 
-  if username == "jeff-fichtner"
+  # if username == "jeff-fichtner"
     if message.downcase.include? trigger
       sleep(2)
       return JSON.dump({
-        "text" => Faker::ChuckNorris.fact
+        "text" => Faker::ChuckNorris.fact + username
       })
     end
-  end
+  # end
 
 end
