@@ -1,1 +1,0 @@
-"Wait, when are the Growlers playing again?"

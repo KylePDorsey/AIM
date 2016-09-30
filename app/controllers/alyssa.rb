@@ -1,1 +1,0 @@
-"48 hours. $4.99. Unlimited karaoke. _Who's down._"
