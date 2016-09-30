@@ -3,20 +3,21 @@ trigger = "chuck norris"
 # route
 post '/matt' do
 
+  message = request["text"] # yes, it's literally that simple
+  username = request["user_name"]
+
   # security token
   return 401 unless request["token"] == ENV["SLACK_TOKEN"]
   # it won't listen to itself
-  if request["user_name"] == "matt-baker"
-    return 200
-  else
-    message = request["text"] # yes, it's literally that simple
+  return 200 if username == "matt-baker"
 
-    # if message.downcase.include? trigger
-    #   sleep(2)
-    #   return JSON.dump({
-    #     "text" => Faker::ChuckNorris.fact
-    #   })
-    # end
-    
+  if username == "jeff-fichtner"
+    if message.downcase.include? trigger
+      sleep(2)
+      return JSON.dump({
+        "text" => Faker::ChuckNorris.fact
+      })
+    end
   end
+
 end
