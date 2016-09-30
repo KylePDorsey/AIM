@@ -1,24 +1,19 @@
-require 'net/http'
-require 'uri'
-require 'json'
+# route
+post '/' do
 
-get '/' do
-  text_input = "This is our response"
-  uri = URI.parse("https://hooks.slack.com/services/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")
-  request = Net::HTTP::Post.new(uri)
-  request.content_type = "application/json"
-  request.body = JSON.dump({
-    "text" => text_input
-  })
+  message = request["text"] # the text in the message
+  username = request["user_name"] # the username of the author
 
-  response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") do |http|
-    http.request(request)
+  # security token
+  return 401 unless request["token"] == ENV["SLACK_TOKEN"] # environment var
+  # it won't listen to itself
+  return 200 if username == "slackbot" # or whatever your bot is named
+
+  if message # matches a certain condition
+    # sleep(2) optional
+    return JSON.dump({
+      "text" => # response
+    })
   end
+
 end
-
-# p response.code
-# p response.body
-
-# post '/outgoing' do
-
-# end
