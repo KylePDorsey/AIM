@@ -10,11 +10,11 @@ post '/matt' do
 
   message = request["text"] # yes, it's literally that simple
 
-  if message.downcase.include? trigger
-    sleep(2)
-    return JSON.dump({
-      "text" => Faker::ChuckNorris.fact
-    })
-  end
+  # if message.downcase.include? trigger
+  #   sleep(2)
+  #   return JSON.dump({
+  #     "text" => Faker::ChuckNorris.fact
+  #   })
+  # end
 
 end
