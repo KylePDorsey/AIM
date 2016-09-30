@@ -11,7 +11,7 @@ post '/matt' do
   message = request["text"]
   if request["user_name"] == "jeff-fichtner"
 
-    if message.include?(first_message_trigger)
+    if message.include? first_message_trigger
       sleep(3)
       return JSON.dump({
         "text" => Faker::ChuckNorris.fact
