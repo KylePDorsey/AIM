@@ -8,10 +8,10 @@ post '/' do
   return 200 if request["user_name"] == "matt-baker"
   text_input = "You don't need to worry about that."
   if q == "Can you explain this?"
-    uri = URI.parse("https://hooks.slack.com/services/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")
-    app_response = Net::HTTP::Post.new(uri)
-    app_response.content_type = "application/json"
-    app_response.body = JSON.dump({
+    # uri = URI.parse("https://hooks.slack.com/services/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")
+    # app_response = Net::HTTP::Post.new(uri)
+    # app_response.content_type = "application/json"
+    return JSON.dump({
       "text" => text_input
     })
   end
@@ -27,4 +27,3 @@ end
 # post '/outgoing' do
 
 # end
-# post '/greg'
