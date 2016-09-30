@@ -14,6 +14,7 @@ post '/matt' do
 
     case message
     when first_message_trigger
+      sleep(3)
       return JSON.dump({
         "text" => first_message_response
       })
