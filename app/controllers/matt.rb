@@ -1,5 +1,4 @@
-first_message_trigger = "@matt-baker tell us a Chuck Norris fact."
-first_message_response = Faker::ChuckNorris.fact
+first_message_trigger = "Chuck Norris"
 
 # home route
 post '/matt' do
@@ -12,11 +11,10 @@ post '/matt' do
   message = request["text"]
   if request["user_name"] == "jeff-fichtner"
 
-    case message
-    when first_message_trigger
+    if message.include?(first_message_trigger)
       sleep(3)
       return JSON.dump({
-        "text" => first_message_response
+        "text" => Faker::ChuckNorris.fact
       })
     end
 
