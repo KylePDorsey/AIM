@@ -9,15 +9,13 @@ post '/matt' do
   # security token
   return 401 unless request["token"] == ENV["SLACK_TOKEN"]
   # it won't listen to itself
-  return 200 if username == "matt-baker"
+  return 200 if username == "slackbot"
 
-  # if username == "jeff-fichtner"
-    if message.downcase.include? trigger
-      sleep(2)
-      return JSON.dump({
-        "text" => Faker::ChuckNorris.fact + username
-      })
-    end
-  # end
+  if message.downcase.include? trigger
+    sleep(2)
+    return JSON.dump({
+      "text" => Faker::ChuckNorris.fact
+    })
+  end
 
 end
